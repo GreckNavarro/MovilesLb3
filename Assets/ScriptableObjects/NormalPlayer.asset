@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 783aba925d51e6847accc9c508b0580f, type: 3}
+  m_Name: NormalPlayer
+  m_EditorClassIdentifier: 
+  health: 3
+  speedY: 50
+  speedX: 5
+  timeInterval: 1
+  shipSprite: {fileID: 21300000, guid: cda480fba8c2713489d083f80befafb0, type: 3}
+  velocityParallax: 2
+  scoreIncrement: 1
