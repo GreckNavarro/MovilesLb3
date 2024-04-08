@@ -15,6 +15,14 @@ public class MovementController : MonoBehaviour
     [Header("Player Stats")]
     [SerializeField] int health;
 
+    [Header("ObjectPooling")]
+    [SerializeField] ObjectPoolDinamic objectPoling;
+    [SerializeField] float timeShoot;
+    [SerializeField] private bool isShooting = false;
+
+
+
+
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -50,6 +58,36 @@ public class MovementController : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+            {
+                if(touch.phase == TouchPhase.Began && isShooting == false)
+                {
+                    isShooting = true;
+                    StartCoroutine(SpawnObjects());
+                }
+                else if(touch.phase == TouchPhase.Ended || touch.phase == TouchPhase.Canceled)
+                {
+                    isShooting = false;
+                }
+            }
+        }
+    }
+
+
+    IEnumerator SpawnObjects()
+    {
+        while (isShooting)
+        {
+            objectPoling.GetObject();
+            yield return new WaitForSeconds(timeShoot);
+        }
+    }
+
+
     private void MovementGyroscope()
     {
         Quaternion deviceRotation = gyro.attitude;
@@ -65,7 +103,10 @@ public class MovementController : MonoBehaviour
         if(collision.gameObject.tag == "Asteroid")
         {
             TakeDamage(1);
-            Destroy(collision.gameObject);
+        }
+        if(collision.gameObject.tag == "Alien")
+        {
+            TakeDamage(2);
         }
     }
 

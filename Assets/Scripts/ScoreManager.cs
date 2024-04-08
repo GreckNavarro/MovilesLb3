@@ -3,8 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System;
 public class ScoreManager : MonoBehaviour
 {
+
+    public static Action IncrementPlayerScore;
+
     [SerializeField] float currentScore;
     [SerializeField] float scoreIncreaseRate;
     [SerializeField] Result resultSO;
@@ -12,8 +16,19 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] Text currentHealth;
     private bool died;
 
+ 
+
+    private void OnEnable()
+    {
+        IncrementPlayerScore += IncrementScore;
+    }
+    private void OnDisable()
+    {
+        IncrementPlayerScore -= IncrementScore;
+    }
     void Start()
     {
+        
         died = false;
         currentScore = 0;
         scoreIncreaseRate = GameStats.Instance.GetSO().ScoreIncrement;
@@ -35,6 +50,11 @@ public class ScoreManager : MonoBehaviour
             
         else
             ChangeScore();
+    }
+
+    public void IncrementScore()
+    {
+        currentScore += 10;
     }
 
     public void ChangeTextHealth(int health)

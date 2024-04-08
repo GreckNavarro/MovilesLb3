@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class GeneradorAsteroides : MonoBehaviour
 {
-    [SerializeField] GameObject asteroidPrefab;
-    [SerializeField] int velocidad;
+
     [SerializeField] float timeInterval;
+    [SerializeField] ObjectPoolStatic objectPoolEnemy;
 
     void Start()
     {
-        velocidad = GameStats.Instance.GetSO().SpeedX;
         timeInterval = GameStats.Instance.GetSO().TimeInterval;
+        objectPoolEnemy.InstantiateObjects();
         StartCoroutine(SpawnAsteroids());
     }
 
@@ -19,11 +19,7 @@ public class GeneradorAsteroides : MonoBehaviour
     {
         while (true)
         {
-            Vector3 spawnPosition = new Vector3(7.0f, Random.Range(-4f, 4f), 0);
-            GameObject newAsteroid = Instantiate(asteroidPrefab, spawnPosition, Quaternion.identity);
-            Rigidbody2D rb = newAsteroid.GetComponent<Rigidbody2D>();
-            rb.velocity = Vector2.left * velocidad;
-
+            objectPoolEnemy.GetObject();
             yield return new WaitForSeconds(timeInterval);
         }
     }

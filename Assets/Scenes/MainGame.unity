@@ -202,6 +202,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 12921144}
   m_CullTransparentMesh: 1
+--- !u!1 &14284781
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 14284782}
+  m_Layer: 0
+  m_Name: Disparador
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &14284782
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 14284781}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.02, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1331732797}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &116275217
 GameObject:
   m_ObjectHideFlags: 0
@@ -411,6 +442,102 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &692470494
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 692470496}
+  - component: {fileID: 692470495}
+  m_Layer: 0
+  m_Name: ObjectPolingBullets
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &692470495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 692470494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44b6a4b4c11e3b146b055c16f4efc319, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectPool: []
+  objectPrefab: {fileID: 6030506073267386308, guid: e16466720b7ca4f4eb2e3b47249a82eb, type: 3}
+  inicialposition: {fileID: 14284781}
+--- !u!4 &692470496
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 692470494}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -7.41, y: -0.24000001, z: -0.013687994}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1064498031
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1064498033}
+  - component: {fileID: 1064498032}
+  m_Layer: 0
+  m_Name: ObjectPoolingAsteroids
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1064498032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064498031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7c1961390ac0ec48a40b2ba9d1af0e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectPool: []
+  objects:
+  - {fileID: 664706897896685016, guid: 19e5780c15b42f34bbe0d0827181be95, type: 3}
+  - {fileID: 7521876911748734665, guid: 93b0ff5fa28f11e42acb48096cdae27e, type: 3}
+  maxQuantity: 6
+--- !u!4 &1064498033
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064498031}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 12.807438, y: -3.7947674, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1190597842
 GameObject:
   m_ObjectHideFlags: 0
@@ -503,8 +630,8 @@ Transform:
   m_GameObject: {fileID: 1190597842}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 21.65, y: -0.0667, z: 0}
-  m_LocalScale: {x: 1.7002496, y: 1.4219, z: 1}
+  m_LocalPosition: {x: 21.79, y: -0.0667, z: 0}
+  m_LocalScale: {x: 1.764009, y: 1.4219, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -682,7 +809,7 @@ GameObject:
   - component: {fileID: 1331732799}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -702,6 +829,9 @@ MonoBehaviour:
   moveSpeed: 25
   scoreManager: {fileID: 116275218}
   health: 3
+  objectPoling: {fileID: 692470495}
+  timeShoot: 0.2
+  isShooting: 0
 --- !u!212 &1331732796
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -762,11 +892,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1331732794}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.9, y: -3.35, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -8.25, y: -0.23000002, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 14284782}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1331732798
@@ -1036,7 +1167,7 @@ GameObject:
   - component: {fileID: 1814373326}
   - component: {fileID: 1814373325}
   m_Layer: 0
-  m_Name: AsteroidGenerate
+  m_Name: EnemyGenerate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1054,9 +1185,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01ce5f04ffede874f9d4483802cefdcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  asteroidPrefab: {fileID: 664706897896685016, guid: 19e5780c15b42f34bbe0d0827181be95, type: 3}
-  velocidad: 5
   timeInterval: 2
+  objectPoolEnemy: {fileID: 1064498032}
 --- !u!4 &1814373326
 Transform:
   m_ObjectHideFlags: 0
@@ -1220,7 +1350,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 519420032}
-  - {fileID: 1331732797}
   - {fileID: 1814373326}
   - {fileID: 1920642050}
   - {fileID: 6114721027300638636}
@@ -1228,3 +1357,6 @@ SceneRoots:
   - {fileID: 116275219}
   - {fileID: 1757250582}
   - {fileID: 624082845}
+  - {fileID: 1331732797}
+  - {fileID: 692470496}
+  - {fileID: 1064498033}
