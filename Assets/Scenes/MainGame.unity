@@ -830,7 +830,7 @@ MonoBehaviour:
   scoreManager: {fileID: 116275218}
   health: 3
   objectPoling: {fileID: 692470495}
-  timeShoot: 0.2
+  timeShoot: 0.4
   isShooting: 0
 --- !u!212 &1331732796
 SpriteRenderer:
