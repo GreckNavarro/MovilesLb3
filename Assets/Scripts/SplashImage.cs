@@ -7,6 +7,6 @@ public class SplashImage : MonoBehaviour
 
    public void StartGame()
    {
-        SceneGlobalManager.Instance.StartGame();
+        SceneGlobalManager.Instance.StartMenu();
    }
 }

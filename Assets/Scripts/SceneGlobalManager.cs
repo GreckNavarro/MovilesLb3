@@ -10,13 +10,7 @@ public class SceneGlobalManager : MonoBehaviourSingletonPersistent<SceneGlobalMa
     public static Action EndGame;
     public static Action returnMenu;
 
-
-    private void Start()
-    {
-        StartGame();
-
-    }
-    public void StartGame()
+    public void StartMenu()
     {
     
         SceneManager.LoadScene("Menu");
