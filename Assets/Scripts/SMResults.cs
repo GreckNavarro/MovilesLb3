@@ -2,23 +2,40 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class SMResults : MonoBehaviour
 {
     [SerializeField] Result resultSO;
     [SerializeField] Text currentScore;
     [SerializeField] Text highScore;
-    void Start()
+
+    private void OnEnable()
+    {
+        SceneGlobalManager.EndGame += ChangeCurrentTexts;
+      
+    }
+    private void OnDisable()
+    {
+        SceneGlobalManager.EndGame -= ChangeCurrentTexts;
+       
+    }
+
+    private void ChangeCurrentTexts()
     {
         currentScore.text = resultSO.CurrentScore.ToString();
         highScore.text = resultSO.HighScore.ToString();
-
     }
-
     public void GoToMenu()
     {
-        SceneManager.LoadScene("CharacterSelection");
+        SceneGlobalManager.Instance.GoMenu();
+    }
+    public void GoSelection()
+    {
+        SceneGlobalManager.Instance.GoToSelectionCharacter();
+    }
+    public void RestarGame()
+    {
+        SceneGlobalManager.Instance.Reload();   
     }
 
 

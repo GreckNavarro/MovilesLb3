@@ -18,7 +18,7 @@ public class AlienController : Enemy
     }
     public override void InitVariables()
     {
-        Vector3 spawnPosition = new Vector3(7.0f, Random.Range(-4f, 4f), 0);
+        Vector3 spawnPosition = new Vector3(13.0f, Random.Range(-4f, 4f), 0);
         transform.position = spawnPosition;
         velocidad = GameStats.Instance.GetSO().SpeedX;
         rb.velocity = Vector2.left * velocidad;

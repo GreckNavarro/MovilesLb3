@@ -34,7 +34,7 @@ public class SelectionCharacter : MonoBehaviour
 
     public void GoToMainGame()
     {
-        SceneManager.LoadScene("MainGame");
+        SceneGlobalManager.Instance.LoadGame();
     }
 
 

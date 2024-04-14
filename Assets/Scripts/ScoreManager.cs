@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System;
 public class ScoreManager : MonoBehaviour
@@ -64,6 +63,6 @@ public class ScoreManager : MonoBehaviour
     void ChangeScore()
     {
         resultSO.ChangeCurrentScore(currentScore);
-        SceneManager.LoadScene("Results");
+        SceneGlobalManager.EndGame?.Invoke();
     }
 }
