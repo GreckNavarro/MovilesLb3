@@ -15,4 +15,4 @@ MonoBehaviour:
   titleColor: {r: 0.9556836, g: 1, b: 0, a: 1}
   characterButtonsColor: {r: 0.4562855, g: 0.764151, b: 0.3280082, a: 1}
   playButtonColor: {r: 0.0504628, g: 0.509434, b: 0.47391498, a: 1}
-  backgroundColor: {r: 0.09411765, g: 0.09411765, b: 0.09411765, a: 1}
+  backgroundColor: {r: 1, g: 1, b: 1, a: 1}

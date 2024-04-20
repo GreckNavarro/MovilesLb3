@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d59217c822a786c4fb3d3aebe36c2019, type: 3}
   m_Name: PaletteColor3
   m_EditorClassIdentifier: 
-  titleColor: {r: 0, g: 0, b: 0, a: 1}
+  titleColor: {r: 1, g: 0, b: 0, a: 1}
   characterButtonsColor: {r: 0.8867924, g: 0.6530815, b: 0.15477037, a: 1}
   playButtonColor: {r: 0.5283019, g: 0.5283019, b: 0.19188322, a: 1}
-  backgroundColor: {r: 1, g: 0.26791614, b: 0.13679248, a: 1}
+  backgroundColor: {r: 1, g: 1, b: 1, a: 1}

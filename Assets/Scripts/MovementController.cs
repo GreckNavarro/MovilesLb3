@@ -11,14 +11,22 @@ public class MovementController : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     [SerializeField] ScoreManager scoreManager;
 
+    
+
+    float startvalueY;
+
 
     [Header("Player Stats")]
     [SerializeField] int health;
+
 
     [Header("ObjectPooling")]
     [SerializeField] ObjectPoolDinamic objectPoling;
     [SerializeField] float timeShoot;
     [SerializeField] private bool isShooting = false;
+
+    [SerializeField] EffectsSO shoot;
+    [SerializeField] EffectsSO collisionclip;
 
 
 
@@ -30,6 +38,8 @@ public class MovementController : MonoBehaviour
     void Start()
     {
         gyroEnabled = SystemInfo.supportsGyroscope;
+
+        startvalueY = Input.acceleration.y;
 
         if (gyroEnabled)
         {
@@ -56,6 +66,7 @@ public class MovementController : MonoBehaviour
         {
             MovementGyroscope();
         }
+     
     }
 
     private void Update()
@@ -83,10 +94,21 @@ public class MovementController : MonoBehaviour
         while (isShooting)
         {
             objectPoling.GetObject();
+            shoot.StartSoundSelection();
             yield return new WaitForSeconds(timeShoot);
         }
     }
 
+    /*private void MovementAcelerometro()
+    {
+        float accelerationY = Input.acceleration.y;
+        float valuecurrent = accelerationY - sta;
+        Debug.Log(accelerationY);
+        Debug.Log(valuecurrent);
+        Vector2 newposition = transform.position + Vector3.up * startvalueY * moveSpeed * Time.deltaTime;
+        newposition.y = Mathf.Clamp(newposition.y, -4.0f, 4.0f);
+        transform.position = newposition;
+    }*/
 
     private void MovementGyroscope()
     {
@@ -103,10 +125,12 @@ public class MovementController : MonoBehaviour
         if(collision.gameObject.tag == "Asteroid")
         {
             TakeDamage(1);
+            collisionclip.StartSoundSelection();
         }
         if(collision.gameObject.tag == "Alien")
         {
             TakeDamage(2);
+            collisionclip.StartSoundSelection();
         }
     }
 
