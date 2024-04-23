@@ -15,15 +15,27 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] Text currentHealth;
     private bool died;
 
- 
+
+    public static Action highscoreReplace;
+    public static Action ScoreReplace;
+
+
+    [SerializeField] NotificationSO simplescore;
+    [SerializeField] NotificationSO highscore;
+
+    
 
     private void OnEnable()
     {
         IncrementPlayerScore += IncrementScore;
+        ScoreReplace += SendNotificationScore;
+        highscoreReplace += SendNotificationHigh;
     }
     private void OnDisable()
     {
         IncrementPlayerScore -= IncrementScore;
+        ScoreReplace -= SendNotificationScore;
+        highscoreReplace -= SendNotificationHigh;
     }
     void Start()
     {
@@ -64,5 +76,17 @@ public class ScoreManager : MonoBehaviour
     {
         resultSO.ChangeCurrentScore(currentScore);
         SceneGlobalManager.EndGame?.Invoke();
+    }
+
+    public void SendNotificationHigh()
+    {
+        highscore.ChangeCurrentScore(resultSO.CurrentScore);
+        NotificationSimple.SendNotification(highscore);
+    }
+
+    public void SendNotificationScore()
+    {
+        simplescore.ChangeCurrentScore(resultSO.CurrentScore);
+        NotificationSimple.SendNotification(simplescore);
     }
 }

@@ -11,6 +11,7 @@ public class MovementController : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     [SerializeField] ScoreManager scoreManager;
 
+
     
 
     float startvalueY;

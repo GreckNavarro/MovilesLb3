@@ -267,6 +267,8 @@ MonoBehaviour:
   resultSO: {fileID: 11400000, guid: 81ce7112622faaa4dbc9ef11cf1568b8, type: 2}
   scoreText: {fileID: 1214744576}
   currentHealth: {fileID: 1359269586}
+  simplescore: {fileID: 11400000, guid: 34e21932d82e008408d315cf2391bee6, type: 2}
+  highscore: {fileID: 11400000, guid: 6b3157c84c65b0c4e9567fd7a17c297c, type: 2}
 --- !u!4 &116275219
 Transform:
   m_ObjectHideFlags: 0

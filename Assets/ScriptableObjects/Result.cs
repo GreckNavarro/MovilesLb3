@@ -19,6 +19,13 @@ public class Result : ScriptableObject
         if(highScore < currentscore)
         {
             highScore = currentscore;
+            ScoreManager.highscoreReplace?.Invoke();
+            
         }
+        else
+        {
+            ScoreManager.ScoreReplace.Invoke();
+        }
+
     }
 }
